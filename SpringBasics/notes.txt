@@ -1,0 +1,11 @@
+
+WHen both are declrared as @component
+********************************************
+
+ield sortAlgorithm in com.suman.spring.basics.SpringBasics.BinarySearchImpl required a single bean, but 2 were found:
+	- bubbleSortAlgorithm: defined in file [/home/suman-nakkala/WORK/Spring-Tutorial/SpringBasics/target/classes/com/suman/spring/basics/SpringBasics/BubbleSortAlgorithm.class]
+	- quickSortAlgorithm: defined in file [/home/suman-nakkala/WORK/Spring-Tutorial/SpringBasics/target/classes/com/suman/spring/basics/SpringBasics/QuickSortAlgorithm.class]
+
+	------------------------------------------------------------------------
+	
+	
