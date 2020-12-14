@@ -40,12 +40,16 @@ public class SpringBasicsApplication {
 		BinarySearchImpl binarySearchImpl = applicationContext.getBean(BinarySearchImpl.class);
 		
 				
-		System.out.println("The First Instance"+ binarySearchImpl);
+		 System.out.println("The First Instance of BINARY IMPL "+ binarySearchImpl);
+		 
+		 System.out.println("The First Instance of SORT IMPL "+ binarySearchImpl.getSortAlgorithm());
 		
-		BinarySearchImpl binarySearchImpl1 = applicationContext.getBean(BinarySearchImpl.class);
+		 BinarySearchImpl binarySearchImpl1 = applicationContext.getBean(BinarySearchImpl.class);
 		
 		
-	System.out.println("The Second Instance"+ binarySearchImpl1);
+	     System.out.println("The Second Instance of BINARY IMPL "+ binarySearchImpl1);
+	     
+	     System.out.println("The Second Instance of BINARY IMPL "+ binarySearchImpl1.getSortAlgorithm());
 		
 		binarySearchImpl.searchForItem(arr, 3);
 		

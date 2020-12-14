@@ -1,5 +1,8 @@
 package com.suman.spring.basics.SpringBasics;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -17,6 +20,21 @@ public class BinarySearchImpl {
 	
 	
 	
+	@PostConstruct
+	public void creatingObjects() {
+		
+		System.out.println("Hello I just created BEANS");
+	}
+	
+	@PreDestroy
+	
+	public void destroyObjects() {
+		
+		System.out.println("Hello you objects are about to get destroyed");
+	}
+	
+	
+	
 	/*
 	 * public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
 	 * 
@@ -31,6 +49,12 @@ public class BinarySearchImpl {
 	 * @Autowired public void setSortAlgorithm(SortAlgorithm sortAlgorithm) {
 	 * this.sortAlgorithm = sortAlgorithm; }
 	 */
+
+	public SortAlgorithm getSortAlgorithm() {
+		return sortAlgorithm;
+	}
+
+
 
 	public int searchForItem(int my_aaray[], int number) {
 		
