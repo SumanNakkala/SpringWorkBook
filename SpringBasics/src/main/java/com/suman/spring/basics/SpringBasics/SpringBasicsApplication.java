@@ -1,11 +1,17 @@
 package com.suman.spring.basics.SpringBasics;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@SpringBootApplication
+//@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringBasicsApplication {
+	
+	static Logger logger = LoggerFactory.getLogger(SpringBasicsApplication.class);
 	
 	
 	/**
@@ -28,7 +34,7 @@ public class SpringBasicsApplication {
 		//BinarySearchImpl binarySearchImpl = new BinarySearchImpl(quickSort);
 		//binarySearchImpl.searchForItem(arr, 9);
 		
-		ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringBasicsApplication.class, args);
+		//ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringBasicsApplication.class, args);
 		
 		
 		/*
@@ -36,6 +42,10 @@ public class SpringBasicsApplication {
 		 * 	2. Prototype  - One instance per each rquest.
 		 * 
 		 * */
+		
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringBasicsApplication.class);
+		//Resource leak: 'applicationContext' is never closed
+		//
 		
 		BinarySearchImpl binarySearchImpl = applicationContext.getBean(BinarySearchImpl.class);
 		
@@ -53,6 +63,9 @@ public class SpringBasicsApplication {
 		
 		binarySearchImpl.searchForItem(arr, 3);
 		
+		logger.info("NOW I AM USINF SLF$J LOGGER");
+		
+		applicationContext.close();
 		
 		
 	}
