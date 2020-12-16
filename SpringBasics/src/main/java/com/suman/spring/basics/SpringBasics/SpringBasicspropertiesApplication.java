@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 
 import com.suman.spring.basics.SpringBasics.properties.SomeExternalService;
 
@@ -13,6 +14,7 @@ import com.suman.spring.basics.SpringBasics.properties.SomeExternalService;
 @Configuration
 @ComponentScan
 @PropertySource("app.properties")
+//@PropertySources
 public class SpringBasicspropertiesApplication {
 	
 	static Logger logger = LoggerFactory.getLogger(SpringBasicspropertiesApplication.class);
